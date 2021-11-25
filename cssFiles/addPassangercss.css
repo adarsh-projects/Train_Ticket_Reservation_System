@@ -1,0 +1,85 @@
+input{
+    height: 35px;
+    width: 200px;
+    border-radius: 5px;
+    padding: 0px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+img{
+    position: absolute;
+    width: 1368px;
+    height: 709px;
+    margin-left: -10px;
+    margin-top: -60px;
+    z-index: -1;
+}
+label{
+    margin-bottom: 10px;
+    font-size: 20px;
+    margin-left: 30px;
+    color: white;
+    font-weight: 600;
+}
+#book{
+    width: 150px;
+    margin-top: 10px;
+    height: 35px;
+    margin-left: 52.4%;
+    font-weight: bold;
+    background-color: rgb(243, 241, 241);
+    border: transparent;
+    border-radius: 5px;
+}
+#passanger{
+    width: 1000px;
+    border: 0px solid black;
+    padding: 10px 10px;
+    padding-bottom: 20px;
+    background-color: steelblue;
+    border-radius: 10px;
+}
+#book:hover{
+    box-shadow: 2px 2px 6px black;
+    background-color: gray;
+}
+#add:hover{
+    background-color: rgb(120, 115, 124);
+    border: 1px solid rgb(120, 115, 124);
+}
+.topnav {
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.topnav button {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    margin-top: 14px;
+    margin-right: 20px;
+    z-index: 1;
+    text-decoration: none;
+    font-size: 17px;
+}
+#add{
+    border-radius: 5px;
+    height: 40px;
+    z-index: 1;
+    border: 1px solid black;
+    box-shadow: 2px 2px 6px rgb(0, 0, 0);
+}
+.topnav h1 {
+    float: left;
+    color: white;
+    padding: 6px;
+    font-weight: bolder;
+    font-style: normal;
+    font-family: sans-serif;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: none;
+    font-size: 27px;
+}

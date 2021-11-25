@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cssFiles/passangerpagecss.css"/>
+</head>
+<body>
+    <img src="home_bank/train2.jpg"/>
+    <div class="topnav">
+        <p>Passanger Page</p>
+        <button id="add" style="padding: 5px 7px 0px 10px;" onclick="logout()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16 9v-4l8 7-8 7v-4h-8v-6h8zm-16-7v20h14v-2h-12v-16h12v-2h-14z"/></svg></button>
+        <button id="add" onclick="checkTicket()">check Ticket</button>
+        <input type="text" id="searchpnr" placeholder="Ticket by PNR"/>
+    </div>
+    <marquee>Welcome to Train Ticket Reservation By THBS &emsp;&emsp;&emsp;&emsp;&emsp; &#xb7; KEEP SAFE DISTANCE FOR COVID RESISTANCE &emsp;&emsp;&emsp; &#xb7; CLEAN HANDS AND FACE MASK CORONA WILL LEAVE BEFORE YOU ASK.</marquee>
+    <div class="mycontainer">
+        <h3> Book Ticket </h3>
+        <label> Source : </label>
+        <input type="text" id="src" placeholder="Enter a Source"/>
+        <label> Destination : </label>
+        <input type="text" id="dest" placeholder="Enter a Destination"/>
+        <label> Date : </label>
+        <input type="date" id="stdate1" placeholder="Enter Date using(/) : " />
+       <!-- <label> Number of Passanger : </label>
+        <input type="text" id="no_passanger" placeholder="Enter Number of Passanger : "/>-->
+        <button id="checkavail" onclick="checkAvail()"> Check Trains</button>
+    </div>
+    <div class="avaliabletrain">
+        <table id="mytable">
+            
+        </table>
+    </div>
+    <button id="goback" onclick="getBack()">Back</button>
+    <script>
+        function logout(){
+            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\index.html");
+        }
+        function getBack(){
+            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\index.html");
+        }
+        function checkTicket(){
+            var pnr_value = document.getElementById("searchpnr").value;
+            localStorage.setItem("pnr_value", pnr_value);
+            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\pdf.html");
+        }
+        function detailsTrain(){
+            var tno = event.target.getAttribute("class");
+            localStorage.setItem("train_number",tno);
+            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\passangertraindetails.html");
+        }
+        function checkAvail(){
+            
+            var source = document.getElementById("src").value;
+            var destination = document.getElementById("dest").value;
+            var stdate = document.getElementById("stdate1").value;
+
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+            today = yyyy + '-' + mm + '-' + dd;
+            
+            if(today > stdate){
+                alert("Travel Date never be lesser then or equals to current date!");
+            }else{
+                const api_url ="http://localhost:8080/api/train/only/"+ source+"_"+destination;
+                async function getapi(url) {
+                    let options = {
+                        method:'GET'
+                    }
+                    const response = await fetch(url,options);
+                    var data = await response.json();
+                    show1(data);
+                }
+                getapi(api_url);
+                function show1(data) {
+                    i = 0;
+                    let tab =`<tr>
+                    <th>Train No.</th>
+                    <th>Train Name</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Date</th>
+                    <th>Price</th>
+                    <th>details</th>
+                    </tr>`;
+                    for (let r of data) {
+                        tab += `<tr>
+                                <td>${r.train_number} </td>
+                                <td>${r.train_name}</td>
+                                <td>${r.source}</td>
+                                <td>${r.destinations}</td>
+                                <td>${r.st_date}</td>
+                                <td>${r.ticket_price}</td>	
+                                <td><a href="#" class="${r.train_number}" onclick="detailsTrain()">details</a></td>
+                                </tr>`;
+                                i++;
+                    }
+                    document.getElementById("mytable").innerHTML = tab;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

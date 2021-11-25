@@ -1,0 +1,95 @@
+.des{
+    color: white;
+    text-decoration: none;
+  }
+  body{
+    margin: 0;
+}  
+/* Header/logo Title */
+.header {
+    padding: 2px;
+    width: 1344px;
+    text-align: center;
+    background: #1788e6;
+    color: white;
+  }
+  
+  /* Increase the font size of the heading */
+  .header h1 {
+    font-size: 40px;
+  }
+
+.trainimg{
+  position: absolute;
+  width: 1358px;
+  height: 616px;
+  z-index:-1;
+  margin-top: -50px;
+  margin-left: -10px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+width: 400px;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+background-color: #04AA6D;
+color: white;
+padding: 14px 20px;
+margin-top: 30px;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+width: 400px;
+}
+
+button:hover {
+opacity: 0.8;
+}
+/* Center the image and position the close button */
+.imgcontainer {
+text-align: center;
+position: relative;
+}
+
+img.avatar {
+width: 27%;
+margin-top: 18px;
+border-radius: 50%;
+}
+
+.container {
+padding: 16px;
+}
+
+span.psw {
+float: right;
+padding-top: 16px;
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+background-color: rgb(75, 148, 216);
+ margin: 5% auto 1% 5%; /*5% from the top, 15% from the bottom and centered */
+border: 1px solid #888;
+border-radius: 10px;
+width: 430px; /* Could be more or less, depending on screen size */
+}
+.modal{
+    position: absolute;
+    
+}
+.login_{
+  font-size: 14px;
+  font-weight: 300;
+  color: white;
+}

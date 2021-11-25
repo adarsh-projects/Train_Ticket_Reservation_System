@@ -1,0 +1,106 @@
+.myContainer{
+    width: 500px;
+    height: 500px;
+    background-color: rgba(248, 171, 27, 0.781);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 61%;
+}
+p{
+    height: 20px;
+    width: 500px;
+    background-color: rgba(27, 248, 57, 0.781);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 60%;
+    text-align: center;
+}
+#header{
+    text-align: center;
+    font-size: 30px;
+}
+#goback{
+    height: 35px;
+    width: 100px;
+    margin-left: 10px;
+    border: 1px solid chocolate;
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+img{
+    position: absolute;
+    width: 1368px;
+    height: 724px;
+    margin-left: -10px;
+    margin-top: -60px;
+    z-index: -1;
+}
+input[type="text"], input[type="date"], #departdatetime, #arrivedatetime, #runson{
+    height: 35px;
+    width: 90%;
+    margin-left: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+label{
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+    width: 100%;
+    margin-left: 14px;
+}
+#addTrain{
+    width: 100px;
+    height: 35px;
+    margin-top: 40px;
+    margin-left: 270px;
+    border: 1px solid chocolate;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: chocolate;
+}
+#goback:hover, #addTrain:hover{
+    box-shadow: 2px 2px 6px rgb(73, 72, 72);
+}
+#status{
+    margin-top: 8px;
+}
+.topnav p {
+    float: left;
+    color: white;
+    font-weight: bolder;
+    border: none;
+}
+.topnav {
+    overflow: hidden;
+    background-color: transparent;
+    margin-top:-15px;
+}
+
+.topnav button {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    margin-top: 14px;
+    margin-right: 20px;
+    z-index: 1;
+    text-decoration: none;
+    font-size: 17px;
+}
+#add{
+    border-radius: 5px;
+    height: 40px;
+    z-index: 1;
+    border: 1px solid black;
+    box-shadow: 2px 2px 6px rgb(0, 0, 0);
+}
+
+th{
+    text-align: left;
+}
