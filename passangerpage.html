@@ -23,8 +23,6 @@
         <input type="text" id="dest" placeholder="Enter a Destination"/>
         <label> Date : </label>
         <input type="date" id="stdate1" placeholder="Enter Date using(/) : " />
-       <!-- <label> Number of Passanger : </label>
-        <input type="text" id="no_passanger" placeholder="Enter Number of Passanger : "/>-->
         <button id="checkavail" onclick="checkAvail()"> Check Trains</button>
     </div>
     <div class="avaliabletrain">
@@ -32,12 +30,8 @@
             
         </table>
     </div>
-    <button id="goback" onclick="getBack()">Back</button>
     <script>
         function logout(){
-            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\index.html");
-        }
-        function getBack(){
             window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\index.html");
         }
         function checkTicket(){
@@ -63,7 +57,7 @@
             today = yyyy + '-' + mm + '-' + dd;
             
             if(today > stdate){
-                alert("Travel Date never be lesser then or equals to current date!");
+                alert("Travel Date never be lesser than current date!");
             }else{
                 const api_url ="http://localhost:8080/api/train/only/"+ source+"_"+destination;
                 async function getapi(url) {

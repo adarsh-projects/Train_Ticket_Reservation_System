@@ -24,7 +24,7 @@
             window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\index.html");
         }
         function getBack(){
-            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\passangerpage.html");
+            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\passangertraindetails.html");
         }
         var train_num = localStorage.getItem("train_no");
         var no_of_passanger = localStorage.getItem("no_passanger");
@@ -75,7 +75,7 @@
                     "pnr": pnr,
                     "train_number": trainno,
                     "total_ticket_price": ticketprice,
-                    "st_date": stdate
+                    "book_ticket_date": today
                 }
                 let options = {
                     method:'POST',

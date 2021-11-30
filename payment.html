@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         img{
-            width: 1200px;
-            height: 700px;
+            width: 1000px;
+            height: 600px;
             margin-left: 150px;
             position: absolute;
             z-index: -1;
         }
         #cancel{
-            width: 170px;
+            width: 144px;
             height: 32px;
-            margin-left: 17px;
+            margin-left: 13px;
         }
         #cancel, #payBill{
             z-index: 1;
@@ -26,23 +26,13 @@
             background-color: rgb(53, 132, 197);
         }
         #payBill{
-            width: 152px;
+            width: 128px;
             height: 32px;
-            margin-top: 31.9%;
-            margin-left: 40.4%;
+            margin-top: 30.5%;
+            margin-left: 39.7%;
         }
         #cancel:hover, #payBill:hover{
             box-shadow: 2px 2px 4px gray;
-        }
-        p{
-            height: 30px;
-            width: 500px;
-            margin-top: 170px;
-            margin-left: 250px;
-            background-color: rgba(27, 248, 57, 0.781);
-            border: 1px solid black;
-            border-radius: 5px;
-            text-align: center;
         }
     </style>
 </head>
@@ -50,13 +40,9 @@
     <img src="./home_bank/payment/pay2.png">
     <button id="payBill" onclick="payBill()">Pay</button>
     <button id="cancel" onclick="cancelTicket()">cancel</button>
-    <p id="status"></p><br>
     <script>
-        document.getElementById("status").style.display = "none";
         var pnr = localStorage.getItem("pnr_value");
         function payBill(){
-            document.getElementById("status").style.display = "block";
-            document.getElementById("status").textContent = "Your Ticket is Confirmed and Your PNR: " + pnr;
             window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\pdf.html");
         }
         function cancelTicket(){

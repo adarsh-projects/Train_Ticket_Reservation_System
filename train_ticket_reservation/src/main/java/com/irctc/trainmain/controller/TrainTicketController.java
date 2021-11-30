@@ -19,11 +19,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.irctc.trainmain.model.Feedback;
 import com.irctc.trainmain.model.Passanger;
 import com.irctc.trainmain.model.SignUp;
 import com.irctc.trainmain.model.Ticket;
 import com.irctc.trainmain.model.Train;
 import com.irctc.trainmain.model.TrainDetails;
+import com.irctc.trainmain.repository.FeedBackRepository;
 import com.irctc.trainmain.repository.PassangerRepository;
 import com.irctc.trainmain.repository.SignUpRepository;
 import com.irctc.trainmain.repository.TicketRepository;
@@ -57,6 +59,9 @@ public class TrainTicketController {
 	@Autowired
 	TrainDetailsRepository traindetres;
 	
+	@Autowired
+	FeedBackRepository fbres;
+	
 	@PostMapping("/signup")
 	public ResponseEntity<SignUp> userSignUp(@RequestBody SignUp user){
 		try {
@@ -69,7 +74,7 @@ public class TrainTicketController {
 	}
 	
 	@GetMapping("/login/{user}")
-	public ResponseEntity<SignUp> userSignUp(@PathVariable("user") String user){
+	public ResponseEntity<String> userLoginUp(@PathVariable("user") String user){
 		try {
 			int i = 0;
 			List<SignUp> l = new ArrayList<>();
@@ -81,9 +86,9 @@ public class TrainTicketController {
 				}
 			}
 			if(i < l.size()) {
-				return new ResponseEntity<>(l.get(i), HttpStatus.OK);
+				return new ResponseEntity<>("YES", HttpStatus.OK);
 			}else {
-				return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+				return new ResponseEntity<>("NO", HttpStatus.NOT_FOUND);
 			}
 		}catch(Exception e) {
 			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -220,6 +225,8 @@ public class TrainTicketController {
 		Optional<Train> op = trainres.findById(train_number);
 		if(op.isPresent()) {
 			Train train_ = op.get();
+			System.out.println("train_name: "+train_u.getTrain_name());
+			train_.setTrain_name(train_u.getTrain_name() == null ? train_.getTrain_name() : train_u.getTrain_name());
 			train_.setDestinations(train_u.getDestinations() == null ? train_.getDestinations() : train_u.getDestinations());
 			train_.setSource(train_u.getSource() == null ? train_.getSource() : train_u.getSource());
 			train_.setTicket_price(train_u.getTicket_price() == 0 ? train_.getTicket_price() : train_u.getTicket_price());
@@ -291,6 +298,27 @@ public class TrainTicketController {
 			return new ResponseEntity<>(HttpStatus.OK);
 		}else {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	@PostMapping("/feedback")
+	public ResponseEntity<Feedback> feedbackMethod(@RequestBody Feedback fb){
+		try {
+			Feedback fb_ = fbres.save(new Feedback(fb.getName(), fb.getEmail(), fb.getMessage()));
+			return new ResponseEntity<>(fb_, HttpStatus.CREATED);
+		}catch(Exception e) {
+			System.out.println(e);
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	@GetMapping("/feedback")
+	public ResponseEntity<List<Feedback>> getAllFeedback(){
+		try {
+			List<Feedback> fb = new ArrayList<>();
+			fbres.findAll().forEach(fb::add);
+			return new ResponseEntity<>(fb, HttpStatus.OK);
+		}catch(Exception e) {
+			return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 	

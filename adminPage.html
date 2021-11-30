@@ -35,7 +35,7 @@
         <table id="myUL">
         </table>
     </div>
-    <button id="goback" onclick="getBack()">Back</button>
+    <button id="goback" onclick="feedBack()">Feedback</button>
     <script>
         function logout(){
             window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\index.html");
@@ -47,8 +47,8 @@
             document.getElementById("admin_well_page").style.color = color[i%4];
             i++;
         }
-        function getBack(){
-            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\index.html");
+        function feedBack(){
+            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\feedbackReview.html");
         }
         function detailsTrain(){
             var tno = event.target.getAttribute("class");

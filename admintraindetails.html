@@ -140,6 +140,7 @@
         }
         getapi(api_url);
         function show(data1){
+
             const api_url = "http://localhost:8080/api/traindetails/"+tno;
                 async function getapi(url) {
                     let options = {
@@ -220,10 +221,10 @@
             var truns_on = document.getElementById("train_runson").textContent;
             var depart_date = document.getElementById("train_departdate").textContent.split(" ");
             var arriv_date = document.getElementById("train_arrivaldate").textContent.split(" ");
+            console.log("name: "+tname);
             if(depart_date >= arriv_date){
                 alert("Arrive date can not be lesser and equals to depart date");
             }else{
-
                 var data12={
                         "train_number":tno,
                         "train_name":tname,
@@ -240,7 +241,6 @@
                     "depart_time": arriv_date[1],
                     "runs_on": truns_on
                 }
-                //console.log(data12);
                 let options = {
                     method:'PUT',
                     headers:{
@@ -257,8 +257,9 @@
                 }
                 let fres = fetch("http://localhost:8080/api/train/"+tno,options);
                     fres.then(res => res.json()).then(d => {
+                        console.log(d)
                 })
-                console.log("date1: "+data11);
+                console.log("date1: "+data11.train_number);
                 let fres1 = fetch("http://localhost:8080/api/traindetails/"+tno,options1);
                     fres1.then(res => res.json()).then(d => {
                         console.log("success"+ d);

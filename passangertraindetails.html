@@ -62,15 +62,19 @@
         <button style="margin-left: 74.5%;" onclick="bookTicket()">Book</button>
         <button onclick="goBack()">Back</button>
     <script>
-        function getBack(){
+        function goBack(){
             window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\passangerpage.html");
         }
         function bookTicket(){
             var no_of_passanger = prompt("No of Pssanger");
             localStorage.setItem("no_passanger",no_of_passanger);
-            var trno = document.getElementById("train_num").textContent;
-            localStorage.setItem("train_no", trno);
-            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\addPassanger.html");
+            if(no_of_passanger != null && no_of_passanger != 0){
+                var trno = document.getElementById("train_num").textContent;
+                localStorage.setItem("train_no", trno);
+                window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\addPassanger.html");
+            }else{
+                alert("Please Enter valid Number no of passanger");
+            }
         }
         var tno = localStorage.getItem("train_number");
         console.log(tno);

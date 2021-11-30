@@ -18,6 +18,7 @@
         <div class="row">
             <div class="col-md-12 text-right mb-3">
                 <button class="btn btn-primary" id="download"> download pdf</button>
+                <button class="btn btn-primary" onclick="goBack()" id="download"> Back</button>
             </div>
             <div class="col-md-12">
                 <div class="card" id="invoice">
@@ -110,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer"> <span class="text-muted">Thank you to choose our service we always welcome you. For any update and help contact our support team <a href="#">Safar.com</a></span> </div>
+                    <div class="card-footer"> <span class="text-muted">Thank you to choose our service we always welcome you. For any update and help contact our support team <a href="./feedback.html">Safar.com</a></span> </div>
                 </div>
             </div>
         </div>
@@ -118,8 +119,10 @@
 </body>
 
 <script>
-    
-    var pnrstart = "BH_20220101_100";//localStorage.getItem("pnr_value");
+    function goBack(){
+        window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\passangerpage.html");
+    }    
+    var pnrstart = localStorage.getItem("pnr_value");
     const api_url ="http://localhost:8080/api/tickets/"+pnrstart;
     
     async function getapi(url) {

@@ -11,7 +11,7 @@
 <body>
     <div class="header">
       <h1 style="margin-top: -4px;"><a href="index.html" class="des">Safar</a></h1>
-      <p style="margin-top: -20px;">Indian Railway Catering and Tourism Corporation</p>
+      <p style="margin-top: -20px;">Season Around-the-india with Family Availability and Round-trip</p>
     </div>
     <img src="home_bank/train4.jpg" class="trainimg"/>
     <div id="id01" class="modal">
@@ -50,16 +50,14 @@
                     method:'GET'
                 }
                 const response = await fetch(url,options);
-                var data = await response.json();
-                console.log("="+data);
-                show(data, _id);
+                var data = await response;
+                show(data);
               }
-              getapi(api_url);
-
-              function show(data, _id){
-                console.log(data+" = "+_id);
-                var res = data.email+"_"+data.password;
-                if(_id == res){
+              getapi(api_url)
+              
+              function show(data){
+                console.log(data.ok);
+                if(data.ok){
                   window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\passangerpage.html");
                 }else{
                   alert("Please Register before Login.");

@@ -60,7 +60,7 @@ public class Passanger {
 
 	public static int getCalculatedFair(int age, String string, int ticket_price) {
 		int _fair = ticket_price;
-		if(string.equals("F")) {
+		if(string.equals("Female")) {
 			_fair = _fair - ((int)_fair/4);
 		}else {
 			if(age > 0 && age <= 12) {
