@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        img{
+            width: 1000px;
+            height: 600px;
+            margin-left: 150px;
+            position: absolute;
+            z-index: -1;
+        }
+        #cancel{
+            width: 144px;
+            height: 32px;
+            margin-left: 13px;
+        }
+        #cancel, #payBill{
+            z-index: 1;
+            border-radius: 5px;
+            font-size: 18px;
+            color: white;
+            border: 1px solid rgb(53, 132, 197);
+            background-color: rgb(53, 132, 197);
+        }
+        #payBill{
+            width: 128px;
+            height: 32px;
+            margin-top: 30.5%;
+            margin-left: 39.7%;
+        }
+        #cancel:hover, #payBill:hover{
+            box-shadow: 2px 2px 4px gray;
+        }
+    </style>
+</head>
+<body>
+    <img src="./home_bank/payment/pay2.png">
+    <button id="payBill" onclick="payBill()">Pay</button>
+    <button id="cancel" onclick="cancelTicket()">cancel</button>
+    <script>
+        var pnr = localStorage.getItem("pnr_value");
+        function payBill(){
+            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\pdf.html");
+        }
+        function cancelTicket(){
+            alert("Are your sure you want to cancel Your Ticket");
+            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\addPassanger.html");
+        }
+    </script>
+</body>
+</html>

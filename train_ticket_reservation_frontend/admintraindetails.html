@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./cssFiles/admintraindetails.css">
+</head>
+<body>
+    <img src="./home_bank/train10.jpg">
+    <div class="traindetaildiv">
+        <table>
+            <tr>
+                <th colspan="4" style="background-color: #b2cbec; color: black; border: 1px solid #b2cbec;"><p style="font-size: 20px;">Train details:</p></th>
+            </tr>
+            <tr>
+                <th>Train No.: </th>
+                <td>
+                    <div id="displaon1">
+                        <p id="train_num"></p>
+                        <input type="text" id="inputtag1" placeholder="insert value: " />
+                        <svg id="changetag1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/></svg>
+                        <svg id="savechange1" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><path d="M21,12.4V7l-4-4H5C3.89,3,3,3.9,3,5v14c0,1.1,0.89,2,2,2h7.4l2-2H5V5h11.17L19,7.83v6.57L21,12.4z M15,15 c0,1.66-1.34,3-3,3s-3-1.34-3-3s1.34-3,3-3S15,13.34,15,15z M6,6h9v4H6V6z M19.99,16.25l1.77,1.77L16.77,23H15v-1.77L19.99,16.25z M23.25,16.51l-0.85,0.85l-1.77-1.77l0.85-0.85c0.2-0.2,0.51-0.2,0.71,0l1.06,1.06C23.45,16,23.45,16.32,23.25,16.51z"/></g></svg>
+                    </div>
+                </td>
+                <th>Train Depart date: </th>
+                <td>
+                    <div id="displaon6">
+                        <p id="train_departdate"></p>
+                        <input type="datetime-local" id="inputtag6" placeholder="insert value: " />
+                        <svg id="changetag6" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/></svg>
+                        <svg id="savechange6" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><path d="M21,12.4V7l-4-4H5C3.89,3,3,3.9,3,5v14c0,1.1,0.89,2,2,2h7.4l2-2H5V5h11.17L19,7.83v6.57L21,12.4z M15,15 c0,1.66-1.34,3-3,3s-3-1.34-3-3s1.34-3,3-3S15,13.34,15,15z M6,6h9v4H6V6z M19.99,16.25l1.77,1.77L16.77,23H15v-1.77L19.99,16.25z M23.25,16.51l-0.85,0.85l-1.77-1.77l0.85-0.85c0.2-0.2,0.51-0.2,0.71,0l1.06,1.06C23.45,16,23.45,16.32,23.25,16.51z"/></g></svg>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Train Name: </th>
+                <td>
+                    <div id="displaon2">
+                        <p id="train_name"></p>
+                        <input type="text" id="inputtag2" placeholder="insert value: " />
+                        <svg id="changetag2" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/></svg>
+                        <svg id="savechange2" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><path d="M21,12.4V7l-4-4H5C3.89,3,3,3.9,3,5v14c0,1.1,0.89,2,2,2h7.4l2-2H5V5h11.17L19,7.83v6.57L21,12.4z M15,15 c0,1.66-1.34,3-3,3s-3-1.34-3-3s1.34-3,3-3S15,13.34,15,15z M6,6h9v4H6V6z M19.99,16.25l1.77,1.77L16.77,23H15v-1.77L19.99,16.25z M23.25,16.51l-0.85,0.85l-1.77-1.77l0.85-0.85c0.2-0.2,0.51-0.2,0.71,0l1.06,1.06C23.45,16,23.45,16.32,23.25,16.51z"/></g></svg>
+                    </div>
+                </td>
+                <th>Train arrive date:</th>
+                <td>
+                    <div id="displaon7">
+                        <p id="train_arrivaldate"></p>
+                        <input type="datetime-local" id="inputtag7" placeholder="insert value: " />
+                        <svg id="changetag7" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/></svg>
+                        <svg id="savechange7" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><path d="M21,12.4V7l-4-4H5C3.89,3,3,3.9,3,5v14c0,1.1,0.89,2,2,2h7.4l2-2H5V5h11.17L19,7.83v6.57L21,12.4z M15,15 c0,1.66-1.34,3-3,3s-3-1.34-3-3s1.34-3,3-3S15,13.34,15,15z M6,6h9v4H6V6z M19.99,16.25l1.77,1.77L16.77,23H15v-1.77L19.99,16.25z M23.25,16.51l-0.85,0.85l-1.77-1.77l0.85-0.85c0.2-0.2,0.51-0.2,0.71,0l1.06,1.06C23.45,16,23.45,16.32,23.25,16.51z"/></g></svg>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Train Runs On:</th>
+                <td>
+                    <div id="displaon8">
+                        <p id="train_runson"></p>
+                        <input type="text" id="inputtag8" placeholder="insert value: " />
+                        <svg id="changetag8" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/></svg>
+                        <svg id="savechange8" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><path d="M21,12.4V7l-4-4H5C3.89,3,3,3.9,3,5v14c0,1.1,0.89,2,2,2h7.4l2-2H5V5h11.17L19,7.83v6.57L21,12.4z M15,15 c0,1.66-1.34,3-3,3s-3-1.34-3-3s1.34-3,3-3S15,13.34,15,15z M6,6h9v4H6V6z M19.99,16.25l1.77,1.77L16.77,23H15v-1.77L19.99,16.25z M23.25,16.51l-0.85,0.85l-1.77-1.77l0.85-0.85c0.2-0.2,0.51-0.2,0.71,0l1.06,1.06C23.45,16,23.45,16.32,23.25,16.51z"/></g></svg>
+                    </div>
+                </td>
+                <th>Train source:</th>
+                <td >
+                    <div id="displaon3">
+                        <p id="train_src"></p>
+                        <input type="text" id="inputtag3" placeholder="insert value: " />
+                        <svg id="changetag3" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/></svg>
+                        <svg id="savechange3" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><path d="M21,12.4V7l-4-4H5C3.89,3,3,3.9,3,5v14c0,1.1,0.89,2,2,2h7.4l2-2H5V5h11.17L19,7.83v6.57L21,12.4z M15,15 c0,1.66-1.34,3-3,3s-3-1.34-3-3s1.34-3,3-3S15,13.34,15,15z M6,6h9v4H6V6z M19.99,16.25l1.77,1.77L16.77,23H15v-1.77L19.99,16.25z M23.25,16.51l-0.85,0.85l-1.77-1.77l0.85-0.85c0.2-0.2,0.51-0.2,0.71,0l1.06,1.06C23.45,16,23.45,16.32,23.25,16.51z"/></g></svg>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th>Train Price:</th>
+                <td>
+                    <div id="displaon5">
+                        <p id="train_price"></p>
+                        <input type="text" id="inputtag5" placeholder="insert value: " />
+                        <svg id="changetag5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/></svg>
+                        <svg id="savechange5" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><path d="M21,12.4V7l-4-4H5C3.89,3,3,3.9,3,5v14c0,1.1,0.89,2,2,2h7.4l2-2H5V5h11.17L19,7.83v6.57L21,12.4z M15,15 c0,1.66-1.34,3-3,3s-3-1.34-3-3s1.34-3,3-3S15,13.34,15,15z M6,6h9v4H6V6z M19.99,16.25l1.77,1.77L16.77,23H15v-1.77L19.99,16.25z M23.25,16.51l-0.85,0.85l-1.77-1.77l0.85-0.85c0.2-0.2,0.51-0.2,0.71,0l1.06,1.06C23.45,16,23.45,16.32,23.25,16.51z"/></g></svg>
+                    </div>
+                </td>
+                <th>Train Destination:</th>
+                <td>
+                    <div id="displaon4">
+                        <p id="train_dest"></p>
+                        <input type="text" id="inputtag4" placeholder="insert value: " />
+                        <svg id="changetag4" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/></svg>
+                        <svg id="savechange4" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><g><rect fill="none" height="24" width="24"/></g><g><path d="M21,12.4V7l-4-4H5C3.89,3,3,3.9,3,5v14c0,1.1,0.89,2,2,2h7.4l2-2H5V5h11.17L19,7.83v6.57L21,12.4z M15,15 c0,1.66-1.34,3-3,3s-3-1.34-3-3s1.34-3,3-3S15,13.34,15,15z M6,6h9v4H6V6z M19.99,16.25l1.77,1.77L16.77,23H15v-1.77L19.99,16.25z M23.25,16.51l-0.85,0.85l-1.77-1.77l0.85-0.85c0.2-0.2,0.51-0.2,0.71,0l1.06,1.06C23.45,16,23.45,16.32,23.25,16.51z"/></g></svg>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <table style="margin-top: 10px;">
+            <tr>
+                <th colspan="4" style="background-color: #b2cbec; color: black; border: 1px solid #b2cbec;"><p style="font-size: 20px;">No Of Passanger:</p></th>
+            </tr>
+            <tr>
+                <th style="padding: 10px;">No of Females: </th>
+                <td style="padding: 10px;" id="noFemale"></td>
+            </tr>
+            <tr>
+                <th style="padding: 10px;">No of Child: </th>
+                <td style="padding: 10px;" id="noChild"></td>
+            </tr>
+            <tr>
+                <th style="padding: 10px;">No of Males: </th>
+                <td style="padding: 10px;" id="noMale"></td>
+            </tr>
+            <tr>
+                <th style="padding: 10px;">No of Senior Citizen: </th>
+                <td style="padding: 10px;" id="noSeniorCitizen"></td>
+            </tr>
+            <tr>
+                <th style="font-size: 20px; padding: 10px;">Total Passanger: </th>
+                <td style="padding: 10px;" id="noPassanger"></td>
+            </tr>
+        </table>
+        <button style="margin-left: 66.6%;" onclick="saveData()">Save</button>
+        <button onclick="deleteData()">Delete</button>
+        <button  onclick="back()">Cancel</button>
+    </div>
+    <script src="./example/adminscript.js"></script>
+    <script>
+        
+        var tno = localStorage.getItem("train_num");
+        const api_url ="http://localhost:8080/api/train/"+tno;
+            async function getapi(url) {
+                let options = {
+                method:'GET'
+            }
+            const response = await fetch(url,options);
+            var data1 = await response.json();
+            show(data1);            
+        }
+        getapi(api_url);
+        function show(data1){
+
+            const api_url = "http://localhost:8080/api/traindetails/"+tno;
+                async function getapi(url) {
+                    let options = {
+                    method:'GET'
+                }
+                const response = await fetch(url,options);
+                var data = await response.json();
+                show1(data);            
+            }
+            getapi(api_url);
+            function show1(data){
+                var v1 =  data.depart_time;
+                var v2 = data.arrive_time;
+                document.getElementById("train_num").textContent = data1.train_number;
+                document.getElementById("train_src").textContent = data1.source;
+                document.getElementById("train_dest").textContent =  data1.destinations;
+                document.getElementById("train_price").textContent = data1.ticket_price;
+                document.getElementById("train_name").textContent = data1.train_name;
+                document.getElementById("train_departdate").textContent = data.depart_date+" "+v1;
+                document.getElementById("train_arrivaldate").textContent = data.arrive_date+" "+v2;
+                document.getElementById("train_runson").textContent = data.runs_on;
+                const api_url ="http://localhost:8080/api/passanger/trainnumber/"+tno;
+                    async function getapi(url) {
+                        let options = {
+                        method:'GET'
+                    }
+                    const response = await fetch(url,options);
+                    var data2 = await response.json();
+                    show2(data2);            
+                }
+                getapi(api_url);
+                function show2(data2){
+                    var tcount = 0;
+                    var female = 0;
+                    var child = 0;
+                    var male = 0;
+                    var SeniorCitizen = 0;
+                    for(let r of data2){
+                        if(r.age <= 12){
+                            child++;
+                        }else if(r.age >= 60){
+                            SeniorCitizen++;
+                        }else if(r.gender == 'F'){
+                            female++;
+                        }else{
+                            male++;
+                        }
+                        tcount++;
+                    }
+                    document.getElementById("noFemale").textContent = female;
+                    document.getElementById("noMale").textContent = male;
+                    document.getElementById("noChild").textContent = child;
+                    document.getElementById("noSeniorCitizen").textContent = SeniorCitizen;
+                    document.getElementById("noPassanger").textContent = tcount;
+                }
+            }
+        }
+
+        function back(){
+            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\adminPage.html");
+        }
+        function deleteData(){
+
+            var tno = document.getElementById("train_num").textContent;
+            console.log(tno);
+            let options = {
+                method:'DELETE'
+            }
+            let fres = fetch("http://localhost:8080/api/train/"+tno,options);
+            let fres1 = fetch("http://localhost:8080/api/traindetails/"+tno,options);
+        }
+        function saveData(){
+            var tno = document.getElementById("train_num").textContent;
+            var tname = document.getElementById("train_name").textContent;
+            var src = document.getElementById("train_src").textContent;
+            var dst = document.getElementById("train_dest").textContent;
+            var tprice = document.getElementById("train_price").textContent;
+            var truns_on = document.getElementById("train_runson").textContent;
+            var depart_date = document.getElementById("train_departdate").textContent.split(" ");
+            var arriv_date = document.getElementById("train_arrivaldate").textContent.split(" ");
+            console.log("name: "+tname);
+            if(depart_date >= arriv_date){
+                alert("Arrive date can not be lesser and equals to depart date");
+            }else{
+                var data12={
+                        "train_number":tno,
+                        "train_name":tname,
+                        "source":src,
+                        "destinations":dst,
+                        "ticket_price":tprice,
+                        "st_date":depart_date[0]
+                    }
+                var data11={
+                    "train_number": tno,
+                    "depart_date": depart_date[0],
+                    "arrive_date": arriv_date[0],
+                    "arrive_time": depart_date[1],
+                    "depart_time": arriv_date[1],
+                    "runs_on": truns_on
+                }
+                let options = {
+                    method:'PUT',
+                    headers:{
+                        'Content-Type':'application/json'
+                    },
+                    body:JSON.stringify(data12)
+                }
+                let options1 = {
+                    method:'PUT',
+                    headers:{
+                        'Content-Type':'application/json'
+                    },
+                    body:JSON.stringify(data11)
+                }
+                let fres = fetch("http://localhost:8080/api/train/"+tno,options);
+                    fres.then(res => res.json()).then(d => {
+                        console.log(d)
+                })
+                console.log("date1: "+data11.train_number);
+                let fres1 = fetch("http://localhost:8080/api/traindetails/"+tno,options1);
+                    fres1.then(res => res.json()).then(d => {
+                        console.log("success"+ d);
+                })
+                
+               // console.log(" = "+data11);
+            }
+            
+        }
+    </script>
+</body>
+</html>

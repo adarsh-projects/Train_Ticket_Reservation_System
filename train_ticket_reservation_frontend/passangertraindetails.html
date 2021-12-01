@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./cssFiles/admintraindetails.css">
+</head>
+<body>
+    <img style="margin-top: -10%;" src="C:\Users\user59\Desktop\ttr\home_bank\train2.jpg">
+    <div style="margin-top: 10%;" class="traindetaildiv">
+        <h1 style="color: white; margin-left: 130px;">Train details:</h1>
+        <table>
+            <tr>
+                <th>Train No.: </th>
+                <td>
+                    <p id="train_num"></p>    
+                </td>
+                <th>Train Depart date: </th>
+                <td>
+                    <p id="train_departdate"></p>    
+                </td>
+            </tr>
+            <tr>
+                <th>Train Name: </th>
+                <td>
+                    <p id="train_name"></p>    
+                </td>
+                <th>Train arrive date:</th>
+                <td>
+                    <p id="train_arrivaldate"></p>
+                </td>
+            </tr>
+            <tr>
+                <th>Train Runs On:</th>
+                <td>
+                    <p id="train_runson"></p>
+                </td>
+                <th>Train source:</th>
+                <td >
+                    <p id="train_src"></p>    
+                </td>
+            </tr>
+            <tr>
+                <th>Train Price:</th>
+                <td>
+                    <p id="train_price"></p>
+                </td>
+                <th>Train Destination:</th>
+                <td>
+                    <p id="train_dest"></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+        <table style="margin-top: 30px;">
+            <tr>
+                <th style="font-size: 20px;">Total Seats Available: </th>
+                <td id="noPassanger"></td>
+            </tr>
+        </table>
+        <button style="margin-left: 74.5%;" onclick="bookTicket()">Book</button>
+        <button onclick="goBack()">Back</button>
+    <script>
+        function goBack(){
+            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\passangerpage.html");
+        }
+        function bookTicket(){
+            var no_of_passanger = prompt("No of Pssanger");
+            localStorage.setItem("no_passanger",no_of_passanger);
+            if(no_of_passanger != null && no_of_passanger != 0){
+                var trno = document.getElementById("train_num").textContent;
+                localStorage.setItem("train_no", trno);
+                window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\addPassanger.html");
+            }else{
+                alert("Please Enter valid Number no of passanger");
+            }
+        }
+        var tno = localStorage.getItem("train_number");
+        console.log(tno);
+        const api_url ="http://localhost:8080/api/train/"+tno;
+            async function getapi(url) {
+                let options = {
+                method:'GET'
+            }
+            const response = await fetch(url,options);
+            var data1 = await response.json();
+            console.log(data1);
+            show(data1);            
+        }
+        getapi(api_url);
+        function show(data1){
+            console.log("data1: "+data1);
+            const api_url = "http://localhost:8080/api/traindetails/"+tno;
+                async function getapi(url) {
+                    let options = {
+                    method:'GET'
+                }
+                const response = await fetch(url,options);
+                var data = await response.json();
+                console.log(data);
+                show1(data);            
+            }
+            getapi(api_url);
+            function show1(data){
+                console.log("data: "+data);
+                var departime =  data.depart_time;
+                var arrivetime = data.arrive_time;
+                
+                document.getElementById("train_num").textContent = data1.train_number;
+                document.getElementById("train_src").textContent = data1.source;
+                document.getElementById("train_dest").textContent =data1.destinations;
+                document.getElementById("train_price").textContent = data1.ticket_price;
+                document.getElementById("train_name").textContent = data1.train_name;
+                document.getElementById("train_departdate").textContent =  data.depart_date+" "+departime;
+                document.getElementById("train_arrivaldate").textContent =   data.arrive_date+" "+ arrivetime;
+                document.getElementById("train_runson").textContent = data.runs_on;
+                document.getElementById("noPassanger").textContent = 675;    
+            }
+        }
+
+    </script>
+</body>
+</html>

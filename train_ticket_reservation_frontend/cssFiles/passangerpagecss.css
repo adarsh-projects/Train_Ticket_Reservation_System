@@ -1,0 +1,129 @@
+body{
+    margin:0px;
+}
+img{
+    position: absolute;
+    width: 1374px;
+    height: 667px;
+    margin-top: -10px;
+    z-index: -1;
+    margin-left: -10px;
+}
+h3{
+    color: rgb(48, 127, 245);
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+#searchpnr{
+    height: 40px;
+    float: right;
+    width: 20%;
+    padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 6px rgb(0, 0, 0);
+    margin-top: 14px;
+    margin-right: 20px;
+}
+input[type="text"], input[type="date"], #checkavail{
+    height: 35px;
+    width: 90%;
+    margin-left: 15px;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+#checkavail{
+    width: 93%;
+    margin-top: 10px;
+}
+.mycontainer{
+    width: 500px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+label{
+    margin-left: 15px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#checkavail:hover{
+    color: white;
+    background-color: rgb(48, 127, 245);
+    box-shadow: 2px 2px 6px black;
+    border: 1px solid rgb(48, 127, 245);
+}
+#add:hover{
+    background-color: rgb(120, 115, 124);
+    border: 1px solid rgb(120, 115, 124);
+}
+.topnav {
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.topnav button {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    margin-top: 14px;
+    margin-right: 20px;
+    z-index: 1;
+    text-decoration: none;
+    font-size: 17px;
+}
+#add{
+    border-radius: 5px;
+    height: 40px;
+    z-index: 1;
+    border: 1px solid black;
+    box-shadow: 2px 2px 6px rgb(0, 0, 0);
+}
+.topnav p {
+    float: left;
+    color: white;
+    padding: 6px;
+    font-weight: bolder;
+    font-style: normal;
+    font-family: sans-serif;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: none;
+    font-size: 27px;
+}
+.avaliabletrain{
+    position: absolute;
+    margin-left: 40%;
+    margin-top: -28%;
+    margin-right: 10px;
+}
+th, td{
+    width:300px;
+    height: 40px;
+    text-align: center;
+    background-color: white;
+}
+#goback{
+    height: 40px;
+    width: 100px;
+    margin-top: 10px;
+    border: 1p solid black;
+    border-radius: 5px;
+    margin-left: 29px;
+    font-weight: bold;
+    font-size: 15px;
+}
+marquee{
+    background-color: red;
+    font-size: 20px;
+    color: yellow;
+    font-weight: bold;
+}

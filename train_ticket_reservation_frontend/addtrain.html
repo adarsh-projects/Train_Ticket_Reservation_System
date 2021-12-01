@@ -1,0 +1,133 @@
+<!--Remove Edit option-->
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./cssFiles/addtraincss.css"/>
+</head>
+<body>
+    <img src="C:\\Users\\user59\\Desktop\\ttr\\home_bank\\train8.jpg"/>
+    <div class="topnav">
+        <p hidden></p>
+        <button id="add" style="padding: 5px 7px 0px 10px;" onclick="logout()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16 9v-4l8 7-8 7v-4h-8v-6h8zm-16-7v20h14v-2h-12v-16h12v-2h-14z"/></svg></button>
+    </div>
+    <div class="myContainer">
+        <h3 id="header"> Add Train Details </h3>
+        <table>
+            <tr>
+                <th><label>Train Number: </label></th>
+                <th><label>Train Name: </label></th>
+            </tr>
+            <tr>
+                <td><input type="text" id="trainno" placeholder="Enter train Number" /></td>
+                <td><input type="text" id="trainname" placeholder="Enter Train Name"/></td>
+            </tr>
+            <tr>
+                <th><label>Train Source: </label></th>
+                <th><label>Train Destination: </label></th>
+            </tr>
+            <tr>
+                <td><input type="text" id="trainsource" placeholder="Enter Train Source"/></td>
+                <td><input type="text" id="traindestination" placeholder="Enter Train Destination"/></td>
+            </tr>
+            <tr>
+                <th><label>Depart Date & time: </label></th>
+                <th><label>Arrive Date & time: </label></th>
+            </tr>
+            <tr>
+                <td><input type="datetime-local" id="departdatetime"/></td>
+                <td> <input type="datetime-local" id="arrivedatetime"/></td>
+            </tr>
+            <tr>
+                <th><label>Runs On </label></th>
+                <th><label>Ticket Price: </label></th>
+            </tr>
+            <tr>
+                <td><input type="text" id="runson" placeholder="Enter Day On which Train runs"/></td>
+                <td><input type="text" id="trainprice" placeholder="Enter Ticket Price"/></td>
+            </tr>
+        </table>
+        <button id="addTrain" onclick="addUpdate()">Add</button>
+        <button id="goback" onclick="getBack()">Back</button>
+    </div>
+    <p id="status">Train Details Added successfully</p>
+    <script>
+        function logout(){
+            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\index.html");
+        }
+        document.getElementById("status").style.display = "none";
+        function getBack(){
+            window.location.replace("C:\\Users\\user59\\Desktop\\ttr\\adminPage.html");
+        }
+        function addUpdate(){
+            var tno1=document.getElementById("trainno").value;
+            var tname=document.getElementById("trainname").value;
+            var source=document.getElementById("trainsource").value;
+            var dest=document.getElementById("traindestination").value;
+            var runson=document.getElementById("runson").value;
+            var depart = document.getElementById("departdatetime").value.split("T");
+            var arrive = document.getElementById("arrivedatetime").value.split("T");
+            var price=parseInt(document.getElementById("trainprice").value);
+            
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+            today = yyyy + '-' + mm + '-' + dd;
+            var dt = depart[0].split("-");
+            var departdate_ = dt[1]+"/"+dt[2]+"/"+dt[0];
+            var st = arrive[0].split("-");
+            var arrivedate_ = st[1]+"/"+st[2]+"/"+st[0];
+            if(today > depart[0]){
+                alert("Travel Date never be lesser then or equals to current date!");
+            }else if(depart[0] > arrive[0]){
+                alert("arrive Date never be lesser then or equals to depart date!");
+            }else{
+                var traindata = {
+                    "depart_date":departdate_,
+                    "arrive_date":arrivedate_,
+                    "depart_time":depart[1],
+                    "arrive_time":arrive[1],
+                    "runs_on":runson,
+                    "train_number":tno1
+                }
+                var data={
+                        "train_number":tno1,
+                        "train_name":tname,
+                        "source":source,
+                        "destinations":dest,
+                        "ticket_price":price,
+                        "st_date":departdate_
+                }
+                //console.log(data);
+                let options = {
+                    method:'POST',
+                    headers:{
+                        'Content-Type':'application/json'
+                    },
+                    body:JSON.stringify(data)
+                }
+                let options1 = {
+                    method:'POST',
+                    headers:{
+                        'Content-Type':'application/json'
+                    },
+                    body:JSON.stringify(traindata)
+                }
+                let fres = fetch("http://localhost:8080/api/train",options);
+                    fres.then(res => res.json()).then(d => {
+                        console.log("success"+ d);
+                })
+                let fres1 = fetch("http://localhost:8080/api/traindetails",options1);
+                    fres1.then(res => res.json()).then(d => {
+                        console.log("success"+ d);
+                })
+                document.getElementById("status").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
