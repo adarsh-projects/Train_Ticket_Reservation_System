@@ -1,0 +1,70 @@
+img{
+    position: absolute;
+    width: 1350px;
+    height: 658px;
+    z-index: -1;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+.ticket{
+    z-index: 1;
+}
+label{
+    font-weight: bold;
+    font-size: 20px;
+}
+th, td{
+    text-align: center;
+    height: 35px;
+    width: 200px;
+    background-color: white;
+}
+th{
+    font-weight: bold;
+    font-size: 14px;
+}
+.tabel1, tr, th, td{
+    border: none;
+}
+#goback{
+    height: 35px;
+    width: 100px;
+    margin-left: 2px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.topnav p {
+    float: left;
+    color: white;
+    padding: 6px;
+    font-weight: bolder;
+    font-style: normal;
+    font-family: sans-serif;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: none;
+    font-size: 27px;
+}
+.topnav {
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.topnav button {
+    float: right;
+    display: block;
+    color: black;
+    text-align: center;
+    margin-top: 14px;
+    margin-right: 20px;
+    z-index: 1;
+    text-decoration: none;
+    font-size: 17px;
+}
+#add{
+    border-radius: 5px;
+    height: 40px;
+    z-index: 1;
+    border: 1px solid black;
+    box-shadow: 2px 2px 6px rgb(0, 0, 0);
+}

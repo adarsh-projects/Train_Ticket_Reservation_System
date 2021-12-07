@@ -1,0 +1,49 @@
+body{
+    background-color: rgb(241, 241, 240);
+}
+#table_div, .table_div1{
+    text-align: center;
+    justify-content: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+th, td{
+    width: 205px;
+    font-size: 18px;
+    height: 35px;
+    white-space: nowrap;
+}
+.header{
+    display: flex;
+    width: 1280px;
+    height: 60px;
+    flex-direction: row;
+    margin-top: -10px; 
+    margin-left: -10px;
+    background-color: rgb(201, 204, 204);
+}
+img{
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+th{
+    background-color: rgb(31, 206, 250);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+td{
+    background-color: azure;
+}
+.logo{
+    font-size: 30px;
+    width: 82%;
+    padding:0px 10px;
+    font-weight: 800;
+    margin-top: 10px;
+}
+.greet{
+    font-size: 20px;
+    margin-right: 10px;
+}
